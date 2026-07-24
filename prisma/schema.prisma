@@ -17,4 +17,5 @@ model User {
   username String   @unique 
   password String 
   age      Int
+  city String
 }
