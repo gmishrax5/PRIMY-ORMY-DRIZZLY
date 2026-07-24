@@ -1,5 +1,30 @@
 {
-  "dependencies": {
+  "name": "prisma-orm-drizzle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "prisma": "^7.9.0",
+    "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmishrax5/PRIMY-ORMY-DRIZZLY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gmishrax5/PRIMY-ORMY-DRIZZLY/issues"
+  },
+  "homepage": "https://github.com/gmishrax5/PRIMY-ORMY-DRIZZLY#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
