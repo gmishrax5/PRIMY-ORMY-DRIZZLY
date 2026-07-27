@@ -13,21 +13,21 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  username String   @unique 
-  password String 
-  age      Int
-  city String
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  firstName String
+  lastName  String
+
+  todos     Todo[]
 }
 
-
 model Todo {
-  id    Int @id @default(autoincrement())
-  tittle String 
+  id          Int     @id @default(autoincrement())
+  title       String
   description String
-  done Boolean
+  done        Boolean @default(false)
 
-  userId Int
-  time DateTime @default(now())
-  
+  userId      Int
+  user        User    @relation(fields: [userId], references: [id])
 }

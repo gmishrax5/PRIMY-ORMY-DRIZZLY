@@ -75,8 +75,8 @@ export const UserScalarFieldEnum = {
   id: 'id',
   username: 'username',
   password: 'password',
-  age: 'age',
-  city: 'city'
+  firstName: 'firstName',
+  lastName: 'lastName'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -84,11 +84,10 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 
 export const TodoScalarFieldEnum = {
   id: 'id',
-  tittle: 'tittle',
+  title: 'title',
   description: 'description',
   done: 'done',
-  userId: 'userId',
-  time: 'time'
+  userId: 'userId'
 } as const
 
 export type TodoScalarFieldEnum = (typeof TodoScalarFieldEnum)[keyof typeof TodoScalarFieldEnum]
