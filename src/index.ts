@@ -13,15 +13,10 @@ const client = new PrismaClient({ adapter });
 
 async function createUser() {
   try {
-    const user = await client.user.upsert({
-      where: { username: "john" },
-      update: {},
-      create: {
-        username: "john",
-        password: "1876884",
-        age: 20,
-        city: "indore",
-      },
+    const user = await client.user.delete({
+      where: { id:1 },
+      
+      
     });
 
     console.log("User upserted/found:", user);
