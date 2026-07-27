@@ -19,3 +19,15 @@ model User {
   age      Int
   city String
 }
+
+
+model Todo {
+  id    Int @id @default(autoincrement())
+  tittle String 
+  description String
+  done Boolean
+
+  userId Int
+  time DateTime @default(now())
+  
+}
