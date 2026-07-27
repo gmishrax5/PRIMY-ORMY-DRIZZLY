@@ -1,23 +1,36 @@
+import "dotenv/config";
 import { PrismaClient } from "./generated/prisma/client.js";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/mydb"
-});
+const connectionString =
+  process.env.DATABASE_URL ??
+  "postgresql://postgres:postgres@localhost:5432/mydb";
 
+const pool = new Pool({ connectionString });
+const adapter = new PrismaPg(pool);
 const client = new PrismaClient({ adapter });
 
+async function createUser() {
+  try {
+    const user = await client.user.upsert({
+      where: { username: "john" },
+      update: {},
+      create: {
+        username: "john",
+        password: "1876884",
+        age: 20,
+        city: "indore",
+      },
+    });
 
-async function createUser(){
-await client.user.create({
-  data:{
-    username:"john",
-    password:"1876884",
-    age:20,
-    city:"indore"
+    console.log("User upserted/found:", user);
+  } catch (error) {
+    console.error("Create user failed:", error);
+  } finally {
+    await client.$disconnect();
+    await pool.end();
   }
-})
-
 }
 
-createUser();
+void createUser();
