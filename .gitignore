@@ -1,19 +1,46 @@
-# dependencies
+# ─── Dependencies ───────────────────────────────────────────
 node_modules/
 
-# build output
+# ─── Build Output ───────────────────────────────────────────
 dist/
+build/
 *.tsbuildinfo
 
-# logs
+# ─── Environment Variables ──────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# ─── Logs ───────────────────────────────────────────────────
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# environment variables
-.env
+# ─── Prisma Generated Client ────────────────────────────────
+src/generated/
+generated/
 
-# Prisma
-/generated/prisma
+# ─── TypeScript ─────────────────────────────────────────────
+*.js.map
+*.d.ts.map
 
-# OS files
+# ─── OS Files ───────────────────────────────────────────────
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editor / IDE ───────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ─── Package Manager Locks (optional — keep if using one PM) ─
+# yarn.lock
+# pnpm-lock.yaml
